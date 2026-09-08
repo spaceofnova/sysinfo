@@ -15,7 +15,7 @@ if ! command -v pm2 &> /dev/null; then
 fi
 
 echo "Starting app with PM2..."
-pm2 start server.js --name "my-app" || pm2 restart "my-app"
+pm2 start server.js --name "sysinfo" || pm2 restart "sysinfo"
 pm2 save
 
 echo "Setup complete!"
