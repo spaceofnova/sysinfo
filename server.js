@@ -1,14 +1,17 @@
 import os from "node:os";
 import express from "express";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Server is up and running!");
 });
 
 app.get("/sys", (req, res) => {
-  console.log(`${req.method} ${req.url} from ${req.ip}`)
+  console.log(`${req.method} ${req.url} from ${req.ip}`);
   res.send({
     platform: os.platform(),
     arch: os.arch(),
